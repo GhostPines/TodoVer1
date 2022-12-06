@@ -36,67 +36,38 @@ const App = () => {
     setIsdones(isdones.filter((isDone) => isDone.id !== id));
   };
 
-
-  // const addTodo = (e) => {
-  //   e.preventDefault();
-  //   setTodos([...todos, { id: uuidv4(), todo: todo, todotitle: todotitle, isDone: false }]); // todos에 새로운 TodoList를 추가
-  //   setTodo(""); // todo를 초기화
-  //   setTodotitle(""); // todotitle을 초기화
-  //   setIsDone(false); // isDone을 초기화
-  // };
-  // Delete 버튼을 눌렀을 때 실행되는 함수
-  // const deleteTodo = (index) => {
-  //   const newTodos = [...todos];
-  //   newTodos.splice(index, 1);
-  //   setTodos(newTodos);
-  // };
-  // Delete 버튼을 눌렀을 때 실행되는 함수 (Done Part에서)
-  // const deleteDone = (index) => {
-  //   const newTodos = [...isdones];
-  //   newTodos.splice(index, 1);
-  //   setIsdones(newTodos);
-  // };
-  // Done 버튼을 눌렀을 때 실행되는 함수, 고유 ID값을 가진 데이터 Done Part로 이동
-  // const doneTodo = () => {
-  //   const newTodos = [...todos];
-  //   const newIsdones = [...isdones];
-  //   newTodos[index].isdone = true;
-  //   newIsdones.push(newTodos);
-  //   setIsdones(newIsdones);
-  //   setTodos([]);
-  // };
-
   return (
     <div className="App">
       <div className="todo">
         <div className="headTodoList">
           <h1>Do Something</h1>
+
+          <input
+            type="text"
+            placeholder="What you gonna do?"
+            value={todotitle}
+            onChange={(e) => setTodotitle(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Tell me details"
+            value={todo}
+            onChange={(e) => setTodo(e.target.value)}
+          />
+          <button className="add-button" onClick={addTodo}>Add</button>
+          <ul className="todo-list">
+            {todos.map((todo) => (
+              <div className="todo-item" key={todo.id}>
+                <li>
+                  <div className="cardTitle">{todo.todotitle}</div>
+                  <p>{todo.todo}</p>
+                </li>
+                <button className="delete-button" onClick={() => deleteTodo(todo.id)}>Delete</button>
+                <button className="done-button" onClick={() => doneTodo(todo.id)}>Done</button>
+              </div>
+            ))}
+          </ul>
         </div>
-        <input
-          type="text"
-          placeholder="What you gonna do?"
-          value={todotitle}
-          onChange={(e) => setTodotitle(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Tell me details"
-          value={todo}
-          onChange={(e) => setTodo(e.target.value)}
-        />
-        <button onClick={addTodo}>Add</button>
-        <ul className="todo-list">
-          {todos.map((todo) => (
-            <div className="todo-item" key={todo.id}>
-              <li>
-                <div className="cardTitle">{todo.todotitle}</div>
-                <p>{todo.todo}</p>
-              </li>
-              <button onClick={() => deleteTodo(todo.id)}>Delete</button>
-              <button onClick={() => doneTodo(todo.id)}>Done</button>
-            </div>
-          ))}
-        </ul>
       </div>
 
       <div className="done">
@@ -114,6 +85,9 @@ const App = () => {
     </div>
   );
 }
+
+
+
 
 //   return (
 //     <div className="App">
@@ -198,5 +172,7 @@ const App = () => {
 //     </div >
 //   );
 // };
+
+
 
 export default App;

@@ -6,8 +6,7 @@
 
 body {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+
     justify-content: center;
     max-width: 1400px;
     min-width: 800px;
@@ -20,9 +19,9 @@ body {
 
 .App {
     display: flex;
-    flex-direction: column;
+
     justify-content: center;
-    align-items: center;
+
     padding: 1rem;
     max-width: 1200px;
     min-width: 900px;
@@ -39,28 +38,23 @@ h1 {
     font-weight: 300;
     color: coral;
     font-size: 2rem;
-    letter-spacing: 1rem;
+    letter-spacing: 0.3rem;
     text-transform: uppercase;
     text-align: center;
     margin: 0 auto;
+    margin-bottom: 2rem;
 }
 
 .headTodoList {
     margin-bottom: 1rem;
-    margin-top: -120px;
-}
-
-.done > h1 {
-    margin-top: 40%;
+    border-right: 1px solid coral;
+    width: 400px;
 }
 
 .todo {
     display: flex;
-    flex-direction: column;
+
     justify-content: center;
-    align-items: center;
-    margin: 1rem 0;
-    position: absolute;
 }
 
 input {
@@ -71,7 +65,7 @@ input {
     font-size: 1.5rem;
     background: white;
     color: darkslategray;
-    width: 280px;
+    width: 330px;
     padding: 1em;
 }
 
@@ -88,16 +82,18 @@ input:focus {
 }
 
 button {
-    width: 100px;
+    width: 130px;
     height: 30px;
     cursor: pointer;
     font-weight: 400;
     letter-spacing: 0.1rem;
     outline: coral solid 0.1px;
+    margin-bottom: 5px;
 }
 
 input,
 button {
+    margin-top: 10px;
     font-size: 1em;
     color: white;
     background: transparent;
@@ -106,18 +102,24 @@ button {
 
 .add-button {
     color: coral;
-    border-left: none;
-    margin-top: -50px;
 }
 
 .delete-button {
     color: coral;
     background-color: coral;
     color: darkslategray;
-    margin-bottom: 2rem;
-    margin-top: 3px;
-    height: 61px;
-    border-top-left-radius: 25px;
+    margin-bottom: 1rem;
+    height: 30px;
+    border-bottom-left-radius: 25px;
+}
+
+.done-button {
+    color: coral;
+    background-color: coral;
+    color: darkslategray;
+    margin-bottom: 1rem;
+    height: 30px;
+    border-bottom-right-radius: 25px;
 }
 
 ul {
@@ -127,10 +129,10 @@ ul {
 }
 
 li {
-    width: 280px;
+    width: 370px;
     padding: 1em;
     text-align: left;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     color: aliceblue;
     background: coral;
     border-left: 5px solid coral;
@@ -188,4 +190,9 @@ li {
     font-weight: 400;
     color: #cf972e;
     letter-spacing: 0.2rem;
+}
+
+.done {
+    width: 400px;
+    height: 500px;
 }
