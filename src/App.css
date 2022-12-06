@@ -1,38 +1,166 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 50px;
+    color: white;
+    min-height: 100vh;
+    background: coral;
+    font-family: "Roboto", sans-serif;
+}
+
 .App {
-  text-align: center;
+    padding: 1rem;
+    max-width: 1200px;
+    min-width: 800px;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    background: darkslategray;
+    box-shadow: rgba(0, 0, 0, 0.55) 0px 10px 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+    font-weight: 300;
+    color: coral;
+    font-size: 2rem;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.todo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input {
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    background: white;
+    color: darkslategray;
+    width: 280px;
+    padding: 1em;
 }
 
-.App-link {
-  color: #61dafb;
+.inputTitle {
+    margin-right: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.inputTodo {
+    margin-right: 1rem;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    outline: coral solid 0.1px;
+}
+
+input,
+button {
+    font-size: 1em;
+    color: white;
+    background: transparent;
+    border: 1px solid coral;
+}
+
+.add-button {
+    color: coral;
+    border-left: none;
+    margin-top: -50px;
+}
+
+.delete-button {
+    color: coral;
+    background-color: coral;
+    color: darkslategray;
+    margin-bottom: 2rem;
+    margin-top: 3px;
+    height: 61px;
+    border-top-left-radius: 25px;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 0px;
+}
+
+li {
+    width: 280px;
+    padding: 1em;
+    text-align: left;
+    margin-bottom: 1rem;
+    color: aliceblue;
+    background: coral;
+    border-left: 5px solid coral;
+}
+
+.divideBox {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.1rem;
+}
+
+.dividerLeft {
+    width: 50%;
+    text-align: center;
+    font-size: 15px;
+    box-shadow: 1px 0px 0px 0px coral;
+}
+
+.dividerRight {
+    width: 50%;
+    text-align: center;
+    font-size: 15px;
+}
+
+.CardForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.cardDividerLeft {
+    width: 45%;
+    text-align: center;
+    font-size: 15px;
+    box-shadow: 1px 0px 0px 0px darkslategray;
+}
+
+.cardDividerRight {
+    width: 45%;
+    text-align: center;
+    font-size: 15px;
+}
+.empty {
+    font-size: 20px;
+    font-weight: 400;
+    color: #cf972e;
+    letter-spacing: 0.2rem;
 }
