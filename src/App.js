@@ -18,7 +18,7 @@ const App = () => {
       alert("제목을 입력해주세요.");
       return;
     }
-    setTodos([...todos, { id: uuidv4(), todo: todo, todotitle: todotitle, isDone: isDone }]);
+    setTodos([...todos, { id: uuidv4(), todo: todo, todotitle: todotitle, isDone: false }]);
     setTodo("");
     setTodotitle("");
   };
@@ -28,8 +28,8 @@ const App = () => {
   };
 
   const doneTodo = (id) => {
-    setIsdones([...isdones, { id: uuidv4(), todo: todo, todotitle: todotitle, isDone: isDone }]);
     setTodos(todos.filter((todo) => todo.id !== id));
+    setIsdones([...todos, { id: uuidv4(), todo: todo, todotitle: todotitle, isDone: true }]);
   };
 
   const deleteDone = (id) => {
@@ -73,12 +73,14 @@ const App = () => {
       <div className="done">
         <h1>Done List</h1>
         <ul className="done-list">
-          {isdones.map((todo) => (
-            <li className="done-item" key={todo.id}>
-              <h3>{todo.todotitle}</h3>
-              <p>{todo.todo}</p>
-              <button onClick={() => deleteDone(todo.id)}>Delete</button>
-            </li>
+          {isdones.map((isdone) => (
+            <div className="done-item" key={isdone.id}>
+              <li>
+                <div className="cardTitle">{isdone.todotitle}</div>
+                <p>{isdone.todo}</p>
+                <button onClick={() => deleteDone(isdone.id)}>Delete</button>
+              </li>
+            </div>
           ))}
         </ul>
       </div>
