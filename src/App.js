@@ -73,11 +73,11 @@ const App = () => {
       <div className="done">
         <h1>Done List</h1>
         <ul className="done-list">
-          {isdones.map((isdone) => (
-            <li className="done-item" key={isdone.id}>
-              <h3>{isdone.todotitle}</h3>
-              <p>{isdone.todo}</p>
-              <button onClick={() => deleteDone(isdone.id)}>Delete</button>
+          {isdones.map((todo) => (
+            <li className="done-item" key={todo.id}>
+              <h3>{todo.todotitle}</h3>
+              <p>{todo.todo}</p>
+              <button onClick={() => deleteDone(todo.id)}>Delete</button>
             </li>
           ))}
         </ul>
